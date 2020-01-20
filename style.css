@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap');
+
+
+body, html { height: 100%}
+
+body{
+    margin: 0;
+    font-family: 'Montserrat', sans-serif ;
+    /* overflow: hidden; */
+    display: grid;
+    grid-template-rows: auto 50px ;
+    grid-template-columns: 12% auto ;
+    grid-template-areas: 
+    "sidebar right"
+    "sidebar footer";
+   
+}
+
+a{
+    text-decoration: none;
+}
+ul{
+    list-style-type: none;
+    float: right;
+}
+ul li{
+    display: inline;
+
+}
+ul li a{
+    color: white;
+    padding: 15px;
+}
+
+header{
+    background-color: teal;
+    display: grid;
+    grid-template-columns: [logo-start] fit-content(30%) [nav-start] auto [nav-end] ;
+    grid-area: head;
+}
+
+#logo{
+    padding: 15px;
+   /*  margin-left: 15px; */
+    background-color: #f1edc7;
+    color: teal;
+    font-weight: bold;
+    display: inline-block;
+    text-align: center;
+}
+
+
+section#hero{
+/*     width: 100%; */
+    height: fit-content;
+    background-color: rgba(0, 0, 0, 0.726);
+    color:white;
+    padding: 2em;
+    border-top:  3px solid rgb(29, 88, 88);
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-area: hero;
+}
+
+#content h1{
+    text-transform: uppercase;
+    color: #f1edc7;
+}
+
+#content p{
+    color: #e4e2d3;
+}
+
+img{
+    max-width: 100%;
+    background-size: cover;
+     margin: 0 auto;
+}
+
+#mount {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}
+
+.sidebar{
+    grid-area: sidebar;
+    background: rgb(1, 85, 85);
+    color: white;
+    padding: 1em;
+}
+.main{
+    grid-area: right;
+    grid-template-rows: 51px fit-content fit-content 10%;
+    display: grid;
+    grid-template-areas: 
+        "head"
+        "hero"
+        "invention"
+        "features"
+    ;
+}
+section{
+    align-items: stretch;
+}
+
+footer{
+    grid-area: footer;
+    background: teal;
+}
+
+#features{
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+ /*    grid-template-rows: repeat(2, auto); */
+/*     grid-gap: 10px 10px; */
+    text-align: center;
+    grid-area: features;
+    height: fit-content(20%);
+    align-items: center;
+}
+#features i{
+    font-size: 2em;
+}
+
+ul#features {
+   margin: 0;
+   padding: 0;
+}
+
+ul#features li {
+    padding: 1em;
+    background-color: #fff
+ }
+ ul#features li:nth-child(2n){
+     background-color: #eeeeee;
+ } 
+ ul#features li:nth-child(3n){
+    background-color: rgb(194, 191, 191);
+} 
+
+
+section#info{
+    background-color: #fff;
+    grid-row: 3/4;
+    padding: 2em;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    align-items: space-around;
+    justify-content: center;
+    grid-area: invention;
+
+}
+
+#content2{
+align-self: center;
+}
+
+#mount2{
+/*    width: 40rem; */
+   width: 20rem;
+    align-self: center;
+    color: teal;
+}
+.fas{
+    color: teal;
+}
+/*  ul#features li p {
+    color
+ } */
+
+
+@media screen and (max-width: 60em){
+
+.sidebar{
+    display: none;
+}
+
+body{
+    height: 100vh;
+    grid-template-columns: auto ;
+    grid-template-areas: 
+    "right"
+    "footer";
+   
+}
+.main{
+    grid-template-areas: 
+        "head"
+        "hero"
+        "features"
+        "invention"
+
+    ;
+}
+
+#mount2{
+    width: fit-content;
+}
+}
+
+@media screen and (max-width: 400px){
+    .sidebar{
+        display: none;
+    }
+    
+    body{
+    
+        grid-template-columns: auto ;
+        grid-template-areas: 
+        "right"
+        "footer";
+       
+    }
+    .main{
+        grid-template-areas: 
+            "head"
+            "hero"
+            "features"
+            "invention"
+    
+        ;
+    }
+    header{
+        grid-template-columns: auto;
+    }
+
+    ul#features{
+        display: flex;
+        flex-direction: column;
+    } 
+
+    section#info{
+        display: flex;
+        flex-direction: column-reverse;
+        background-color: rgba(0, 128, 128, 0.233);
+    }
+    
+    section#hero{
+        grid-template-columns: 60% 40%;
+    }
+
+    #logo{
+        margin-left: 0;
+    }
+
+    nav ul{
+        float: none;
+         padding: 0%;
+         margin: 0;
+         width: 100%;
+    }
+
+    nav ul li a{
+        width: calc(25% - 35px);
+        display: inline-block;
+        font-size: .9em;
+    }
+}
