@@ -216,8 +216,9 @@ body{
         grid-template-areas: 
             "head"
             "hero"
-            "features"
             "invention"
+            "features"
+
     
         ;
     }
@@ -232,12 +233,19 @@ body{
 
     section#info{
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
         background-color: rgba(0, 128, 128, 0.233);
+        text-align: center;
     }
-    
+    section#info img{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        padding: 15px 0;
+    }
     section#hero{
-        grid-template-columns: 60% 40%;
+        grid-template-columns: auto;
+        text-align: center;
     }
 
     #logo{
@@ -256,4 +264,6 @@ body{
         display: inline-block;
         font-size: .9em;
     }
+
+    
 }
